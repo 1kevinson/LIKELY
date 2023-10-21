@@ -1,7 +1,6 @@
-@import "abstracts/mixins";
+@import "abstracts/responsive";
 @import "abstracts/variables";
 
-@import "base/fonts";
 @import "base/animations";
 @import "base/base";
 @import "base/typography";
@@ -11,6 +10,4 @@
 
 @import "sections/content";
 
-@import "components/btn";
-@import "components/language-toggle";
-@import "components/sticky-footer";
+@import "components/heart";

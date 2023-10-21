@@ -1,0 +1,13 @@
+.container {
+   display: grid;
+   grid-template-rows: min-content min-content repeat(8, min-content);
+
+   @include respond(phone) {
+      grid-template-rows: min-content 100vh repeat(8, min-content);
+      overflow-x: hidden;
+   }
+
+   grid-template-columns: [full-start] 7rem
+                          [center-start] repeat(6, minmax(min-content, 1fr)) [center-end]
+                          7rem [full-end];
+}

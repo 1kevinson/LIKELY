@@ -1,0 +1,98 @@
+@mixin clearfix {
+   &::after {
+      content: "";
+      display: table;
+      clear: both;
+   }
+}
+
+@mixin sections-header($color) {
+   grid-row: 1/2;
+   grid-column: 1/7;
+
+   display: grid;
+   grid-template-rows: repeat(2, 1fr);
+   justify-items: center;
+
+   color: $color;
+   font-family: Raleway, serif;
+
+   &--title {
+      font-size: $small-title-font;
+      align-self: end;
+   }
+
+   &--subtitle {
+      font-size: $big-title-font;
+      font-weight: bold;
+   }
+}
+
+@mixin contact-field {
+   padding: 1rem;
+   font-size: 1.25rem;
+   border: 1px solid #ccc;
+   border-radius: 10px;
+   color: $color-primary-light;
+   grid-column: 2/5;
+   font-family: "Hanuman", sans-serif;
+}
+
+@mixin center-horizontal-vertical {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+}
+
+// MEDIA QUERY MANAGER
+
+/*
+
+0 - 600px: Phone
+600 - 900px: Tablet Portrait
+900 - 1200px: Tablet Landscape
+[1200 - 1800] is where our normal style apply
+1800px + : Big desktop
+
+*/
+
+// ems and rems are not affected by the root font size define in the _base file
+// ems is THE best choice for media queries
+// 1em = 16px
+
+// ORDER : base + typography > general layout + grid > page layout > components
+
+/*
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-landscape
+- big-desktop
+*/
+
+@mixin respond($breakpoint) {
+   @if $breakpoint == small-phone {
+      @media only screen and (max-width: 23.75em) { @content } // 380px
+   }
+
+   @if $breakpoint == phone {
+      @media only screen and (max-width: 37.5em) { @content } // 600px
+   }
+   
+   @if $breakpoint == tab-port {
+      @media only screen and  (max-width: 56.25em) { @content } // 900px
+   }
+   
+   @if $breakpoint == tab-land {
+      @media only screen and (max-width: 75em) { @content } // 1200px
+   }
+
+   @if $breakpoint == medium-desktop {
+      @media only screen and (max-width: 106.25em) { @content } // 1500px [mbp13 + mbp15]
+   }
+   
+   @if $breakpoint == big-desktop {
+      @media only screen and (min-width: 112.5em) { @content } // 1800px +
+   }
+}

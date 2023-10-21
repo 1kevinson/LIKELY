@@ -1,0 +1,14 @@
+.btn {
+   padding: 1rem 3.2rem;
+   border-radius: 6px;
+   transition: all 0.2s linear 0s;
+   font-family : inherit;
+
+   @include respond(phone) {
+      padding: 1rem 2rem;
+   }
+
+   &:hover {
+      cursor: pointer;
+   }
+}

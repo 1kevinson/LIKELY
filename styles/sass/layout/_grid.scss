@@ -1,13 +1,16 @@
 .container {
    display: grid;
-   grid-template-rows: min-content min-content repeat(8, min-content);
+   grid-template-rows: 30vh 40vh 30vh;
+   grid-template-columns: 30vw 40vw 30vw;
+   grid-gap: 1rem;
 
-   @include respond(phone) {
-      grid-template-rows: min-content 100vh repeat(8, min-content);
-      overflow-x: hidden;
+   grid-template-areas:
+      "top-left top top-right"
+      "left center right"
+      "bottom-left bottom bottom-right";
+
+   @include respond(medium-desktop) {
+      grid-template-rows: 15vh 70vh 15vh;
+      grid-template-columns: 15vw 70vw 15vw;
    }
-
-   grid-template-columns: [full-start] 7rem
-                          [center-start] repeat(6, minmax(min-content, 1fr)) [center-end]
-                          7rem [full-end];
 }

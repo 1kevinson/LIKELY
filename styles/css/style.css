@@ -125,20 +125,75 @@ body {
 
 .container {
   display: grid;
-  grid-template-rows: min-content min-content repeat(8, min-content);
-  grid-template-columns: [full-start] 7rem [center-start] repeat(6, minmax(min-content, 1fr)) [center-end] 7rem [full-end]; }
-  @media only screen and (max-width: 37.5em) {
+  grid-template-rows: 30vh 40vh 30vh;
+  grid-template-columns: 30vw 40vw 30vw;
+  grid-gap: 1rem;
+  grid-template-areas: "top-left top top-right" "left center right" "bottom-left bottom bottom-right"; }
+  @media only screen and (max-width: 106.25em) {
     .container {
-      grid-template-rows: min-content 100vh repeat(8, min-content);
-      overflow-x: hidden; } }
+      grid-template-rows: 15vh 70vh 15vh;
+      grid-template-columns: 15vw 70vw 15vw; } }
 
-.btn {
-  padding: 1rem 3.2rem;
-  border-radius: 6px;
-  transition: all 0.2s linear 0s;
-  font-family: inherit; }
-  @media only screen and (max-width: 37.5em) {
-    .btn {
-      padding: 1rem 2rem; } }
-  .btn:hover {
+.heart-section {
+  grid-area: center;
+  display: grid;
+  grid-gap: .8rem;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: ". . ." ". center ." ". . ."; }
+
+:root {
+  --dim-x: 80px;
+  --dim-y: 70px;
+  --cruve-height: 20px; }
+
+#myPath path {
+  transform: translate(0.125px, 0.033px); }
+
+.heart-wrap {
+  perspective: 200px;
+  filter: drop-shadow(0px 10px 10px rgba(174, 196, 238, 0.6)); }
+  .heart-wrap > .heart {
     cursor: pointer; }
+
+.heart {
+  position: relative;
+  height: var(--dim-y);
+  width: var(--dim-x);
+  overflow: hidden;
+  clip-path: url(#myPath);
+  background-image: radial-gradient(#c9d8f5 60%, #afc4ee); }
+
+.tank {
+  position: absolute;
+  bottom: 0;
+  height: 0;
+  width: var(--dim-x);
+  background-color: #6782bf;
+  z-index: 5; }
+
+.curve {
+  position: absolute;
+  bottom: calc(-1 * var(--cruve-height));
+  width: var(--dim-x);
+  height: var(--cruve-height); }
+  .curve use {
+    animation: move 2s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite; }
+  .curve use:nth-child(1) {
+    animation-duration: 3s; }
+  .curve use:nth-child(2) {
+    animation-duration: 4s; }
+  .curve use:nth-child(3) {
+    animation-duration: 2s; }
+
+@keyframes move {
+  0% {
+    transform: translateX(-90px); }
+  100% {
+    transform: translateX(85px); } }
+
+.my-atropos {
+  grid-area: center;
+  display: grid;
+  align-items: center;
+  justify-items: center; }

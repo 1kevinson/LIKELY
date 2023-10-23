@@ -1,7 +1,7 @@
 {
   "name": "heart-button",
   "version": "1.0.0",
-  "description": "Liking heart button",
+  "description": "Liking heart button for blogs",
   "main": "index.js",
   "devDependencies": {
     "@babel/core": "7.18.6",
@@ -10,15 +10,15 @@
     "@typescript-eslint/eslint-plugin": "^5.10.0",
     "@typescript-eslint/parser": "^5.10.0",
     "babel-jest": "^27.4.6",
+    "concat": "^1.0.3",
     "eslint": "^8.7.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
     "jest": "^27.4.7",
-    "typescript": "^4.5.5",
-    "concat": "^1.0.3",
     "live-server": "^1.2.1",
     "node-sass": "9.0.0",
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "typescript": "^4.5.5"
   },
   "scripts": {
     "serve": "live-server",

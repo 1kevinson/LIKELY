@@ -7,7 +7,7 @@ export default class Confetti {
             particleCount: 35,
             spread: 75,
             scalar: .85,
-            startVelocity: 35,
+            startVelocity: 30,
             angle: 90,
             origin: { y: 0.515 }
         });

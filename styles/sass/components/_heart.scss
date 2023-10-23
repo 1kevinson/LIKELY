@@ -31,7 +31,7 @@
   }
 
   perspective: 200px;
-  filter: drop-shadow(0px 10px 10px rgba(174, 196, 238, 0.6));
+  filter: drop-shadow(0px 10px 10px rgba(239, 189, 241, 0.75));
 }
 
 .heart {
@@ -40,7 +40,7 @@
   width: var(--dim-x);
   overflow: hidden;
   clip-path: url(#myPath);
-  background-image: radial-gradient(#c9d8f5 60%, #afc4ee);
+  background-image: radial-gradient(rgba(195, 199, 206, 0.32) 60%, rgba(181, 183, 183, 0.5));
 }
 
 .tank {
@@ -48,7 +48,7 @@
   bottom: 0;
   height: 0;
   width: var(--dim-x);
-  background-color: rgb(103, 130, 191);
+  background-color: rgba(227, 47, 102, 0.9);
   z-index: 5;
 }
 

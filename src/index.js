@@ -4,6 +4,7 @@ import Confetti from "./Confetti.js";
 
 window.onload = unit => {
     const heartLevels = [10, 30, 50, 100];
+    const fillLevels = [5, 15, 25, 40];
     let counter = 0;
     let isHeartFull = false;
 
@@ -11,23 +12,28 @@ window.onload = unit => {
         if (isHeartFull) return;
 
         // Filling the heart
+        gsap.to('.heart', {
+            translateZ: counter === 3 ? fillLevels[counter] : 0,
+            duration: 0.25
+        });
+
         gsap.to(".curve", {
             bottom: heartLevels[counter],
             transformOrigin: "bottom",
             scaleY: .25,
             duration: 0.15,
             onComplete: counter < 3 ? Sounds.playInterfaceSound : Sounds.playCartoonJump
-        })
+        });
 
         gsap.to(".tank", {
             height: heartLevels[counter],
             duration: 0.15,
-        })
+        });
 
         gsap.to('.heart', {
-            translateZ: 0,
-            duration: 0.15
-        })
+            translateZ: counter === 3 ? 0 : fillLevels[counter],
+            duration: 0.5
+        });
 
         if (++counter > 3){
             isHeartFull = true;

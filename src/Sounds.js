@@ -1,12 +1,13 @@
 export default class Sounds {
     static playInterfaceSound() {
-        const interfaceSound = document.getElementsByTagName("audio")[2];
-        interfaceSound.volume = .75;
-        interfaceSound.play();
+        const arcadeClick = document.getElementsByTagName("audio")[1];
+        arcadeClick.volume = .25;
+        arcadeClick.play();
     }
 
     static playCartoonJump() {
         const cartoonJump = document.getElementsByTagName("audio")[0];
+        cartoonJump.volume = .75;
         cartoonJump.play();
     }
 }

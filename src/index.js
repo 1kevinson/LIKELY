@@ -32,7 +32,7 @@ window.onload = unit => {
 
         gsap.to('.heart', {
             translateZ: counter === 3 ? 0 : fillLevels[counter],
-            duration: 0.5
+            duration: 0.35
         });
 
         if (++counter > 3){

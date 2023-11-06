@@ -11,7 +11,6 @@ window.onload = unit => {
     function pumpHeart() {
         if (isHeartFull) return;
 
-        // Filling the heart
         gsap.to('.heart', {
             translateZ: counter === 3 ? fillLevels[counter] : 0,
             duration: 0.25
@@ -38,6 +37,7 @@ window.onload = unit => {
         if (++counter > 3){
             isHeartFull = true;
             Confetti.run();
+            heart.style.cursor = 'default';
         }
     }
 

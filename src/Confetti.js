@@ -4,12 +4,13 @@ export default class Confetti {
 
     static run() {
         confetti({
-            particleCount: 17.5,
-            spread: 80,
+            particleCount: 25,
+            spread: 85,
             scalar: .85,
-            startVelocity: 25,
+            startVelocity: 30,
             angle: 90,
-            origin: { y: 0.465 }
+            gravity: 1.25,
+            origin: {y: 0.5}
         });
     }
 }
